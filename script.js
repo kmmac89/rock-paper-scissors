@@ -16,14 +16,15 @@ const computerSelection = computerPlay ();
 
 const playerSelection = prompt ();
 
-function playRound(playerSelection, computerSelection) {
-if (playerSelection === a && computerSelection === a);
-	alert ("tie")
-	else if (playerSelection === a && computerSelection === b);
-	alert ("computer win")
-	else ( playerSelection === a && computerSelection === c);
-	alert ("player win")
-
+function playRound(playerSelection, computerSelection);
+	let roundWinner = ();
+	if (playerSelection === a && computerSelection === a) {
+		alert ("tie");
+		else if (playerSelection === a && computerSelection === b)
+		alert ("computer win");
+		else ( playerSelection === a && computerSelection === c)
+		alert ("player win");
+}
 
 
 func game()
