@@ -2,9 +2,11 @@
 /* Rock Paper Scissors is a game in which two players make a selection from three pre-determined, weighted options.
 By luck of the draw, the player who chooses the higher-weighted options wins the round. Players will compete five times to determine the winner of the game. */
 
-let playerSelection = prompt("...").toLowerCase();
-let computerSelection = computerPlay ();
-	function computerPlay() {
+
+let computerScore = 0;
+let playerScore = 0;
+
+function computerPlay() {
 		let computerRoll = Math.floor(Math.random() * 3); 
 			if (computerRoll === 0) {
 				return "rock";
@@ -15,32 +17,43 @@ let computerSelection = computerPlay ();
 			}
 		}
 			
-let computerScore = 0;
-let playerScore = 0;
-let gameRound = 0;
+function playRound(playerSelection, computerSelection) { 
+	if (playerSelection === computerSelection){
+			return "try again"
 
-
-
-
-let playGame = playRound ();
-	function playRound(playerSelection, computerSelection) { 
-		if ((playerSelection == "rock" && computerSelection == "scissors") ||
+		} else if ((playerSelection == "rock" && computerSelection == "scissors") ||
 			(playerSelection == "scissors" && computerSelection == "paper") ||
 			(playerSelection == "paper" && computerSelection == "rock")) {
-				return playerScore = playerScore + 1;
-		gameRound++;
-		console.log("player wings this roung owo");
-		}	else if (playerSelection === computerSelection) {
-		/* WELL FELLAS WE GOT DOWN TO THIS LINE WOAH BOY GOTTA SAY I AM PROUD OF THIS TEAM !!! FERDA */
-	 	console.log("ohhh no a tie try again!");
-		}	else {
-				return computerScore = computerScore + 1;
-		gameRound++;
-		console.log("compupter wings!! yayy!");
+			playerScore++;
+			return "you win!";
+					
+		} else {
+			computerScore++;
+			return "computer wins!";
+		
 	}
+}
+
+function game(){
+	for (i = 0; i < 5; i++) {
+		const playerSelection = prompt("...").toLowerCase();
+		const computerSelection = computerPlay();
+
+		console.log(playRound(playerSelection, computerSelection));
+		console.log(playerScore);
+		console.log(computerScore);
+	}
+}
+
+game();
 
 
 
+
+
+/*
+
+let playGame = playRound ();
 return computerScore;
 	if (computerScore == 5) { 
 		console.log("game over")}
@@ -55,9 +68,7 @@ return gameRound;
 	}
 }
 
-
-/* junk
-const 
+gameRound++;
 
 
 computerPlay ();
@@ -68,7 +79,7 @@ playRound ();
 
 let 
 
-for (i = 0; i < 5; i++) {
+
 
 function playGame () {
 	loop (playRound; gameRound = 5 {
